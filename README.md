@@ -4,6 +4,8 @@ Facebook / Meta Conversion API for Next.js
 
 # Facebook / Meta Conversion API for Next.js
 This package helps you implement Facebook Conversion API in Next.js.
+It relies on the @tapstack/facebook-dash-conversion-api package for interacting with the Facebook Graph API.
+It is published under the **@tapstack** scope and works with Next.js 15 and is backward compatible with Next.js 14.
 
 Tested with Next.js 14 and 15.
 
@@ -20,6 +22,8 @@ Support Next.js API routes on both Vercel and AWS Amplify.
 NPM
 ```bash
 npm install @tapstack/facebook-conversion-api-nextjs
+# also install its peer dependency for API calls
+npm install @tapstack/facebook-conversion-api
 ```
 
 Yarn

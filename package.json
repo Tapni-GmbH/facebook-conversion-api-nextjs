@@ -1,6 +1,6 @@
 {
   "name": "@tapstack/facebook-conversion-api-nextjs",
-  "version": "5.1.0",
+  "version": "5.2.0",
   "description": "Facebook Conversion API for Next.js",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -30,7 +30,8 @@
   "dependencies": {
     "formdata-node": "^4.4.1",
     "universal-cookie": "^4.0.4",
-    "uuid": "^9.0.0"
+    "uuid": "^9.0.0",
+    "@tapstack/facebook-conversion-api": "^1.0.0"
   },
   "peerDependencies": {
     "next": "^14 || ^15",
