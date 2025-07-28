@@ -5,6 +5,8 @@ Facebook / Meta Conversion API for Next.js
 # Facebook / Meta Conversion API for Next.js
 This package helps you implement Facebook Conversion API in Next.js.
 
+Tested with Next.js 14 and 15.
+
 It includes an API route handler for sending server-side events to Facebook and client-side functions to trigger the events.
 
 Facebook recommends sending events with Facebook Pixel and the Conversion API with the same event id to match duplicated events.
@@ -17,18 +19,18 @@ Support Next.js API routes on both Vercel and AWS Amplify.
 
 NPM
 ```bash
-npm install @rivercode/facebook-conversion-api-nextjs
+npm install @tapstack/facebook-conversion-api-nextjs
 ```
 
 Yarn
 ```bash
-yarn add @rivercode/facebook-conversion-api-nextjs
+yarn add @tapstack/facebook-conversion-api-nextjs
 ```
 
 ## 1. Create Next.js API Route
 pages/api/fb-events.js
 ```jsx
-import { fbEventsHandler } from '@rivercode/facebook-conversion-api-nextjs/handlers';
+import { fbEventsHandler } from '@tapstack/facebook-conversion-api-nextjs/handlers';
 
 export default fbEventsHandler;
 ```
@@ -49,7 +51,7 @@ This is only needed if you want to fire standard Pixel Events.
 ### Add Facebook Pixel Provider & Script
 pages/_app.js
 ```jsx
-import { FBPixelScript, FBPixelProvider } from '@rivercode/facebook-conversion-api-nextjs/components';
+import { FBPixelScript, FBPixelProvider } from '@tapstack/facebook-conversion-api-nextjs/components';
 
 ...
 <>
@@ -64,7 +66,7 @@ import { FBPixelScript, FBPixelProvider } from '@rivercode/facebook-conversion-a
 ## 3. Start Sending Events
 Trigger the events you need. For example, add to cart or purchase events.
 ```jsx
-import { fbEvent } from '@rivercode/facebook-conversion-api-nextjs';
+import { fbEvent } from '@tapstack/facebook-conversion-api-nextjs';
 
 useEffect(() => {
     fbEvent({
