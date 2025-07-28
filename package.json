@@ -31,7 +31,7 @@
     "formdata-node": "^4.4.1",
     "universal-cookie": "^4.0.4",
     "uuid": "^9.0.0",
-    "@tapstack/facebook-dash-conversion-api": "^1.0.0"
+    "@tapstack/facebook-conversion-api": "^1.0.0"
   },
   "peerDependencies": {
     "next": "^14 || ^15",
