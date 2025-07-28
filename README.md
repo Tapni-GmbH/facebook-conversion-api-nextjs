@@ -7,6 +7,8 @@ This package helps you implement Facebook Conversion API in Next.js.
 It relies on the @tapstack/facebook-dash-conversion-api package for interacting with the Facebook Graph API.
 It is published under the **@tapstack** scope and works with Next.js 15 and is backward compatible with Next.js 14.
 
+Tested with Next.js 14 and 15.
+
 It includes an API route handler for sending server-side events to Facebook and client-side functions to trigger the events.
 
 Facebook recommends sending events with Facebook Pixel and the Conversion API with the same event id to match duplicated events.
@@ -21,13 +23,12 @@ NPM
 ```bash
 npm install @tapstack/facebook-conversion-api-nextjs
 # also install its peer dependency for API calls
-npm install @tapstack/facebook-dash-conversion-api
+npm install @tapstack/facebook-conversion-api
 ```
 
 Yarn
 ```bash
 yarn add @tapstack/facebook-conversion-api-nextjs
-yarn add @tapstack/facebook-dash-conversion-api
 ```
 
 ## 1. Create Next.js API Route
