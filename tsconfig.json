@@ -1,13 +1,13 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "target": "es6",
+    "target": "es2019",
     "module": "commonjs",
     "outDir": "./dist",
     "rootDir": "./src",
     "strict": true,
     "allowJs": true,
-    "jsx": "react",
+    "jsx": "react-jsx",
     "moduleResolution": "node",
     "esModuleInterop": true,
     "declaration": true,

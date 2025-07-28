@@ -7,7 +7,7 @@ import Cookies from 'universal-cookie';
  * @param req
  */
 const getClientIpAddress = (req: NextApiRequest): string => {
-  const ipAddress = (req.headers['x-real-ip'] || req.connection.remoteAddress);
+  const ipAddress = (req.headers['x-real-ip'] || req.socket?.remoteAddress);
 
   if (ipAddress) {
     return String(ipAddress);
@@ -31,7 +31,7 @@ const getClientUserAgent = (req: NextApiRequest): string => String(req.headers['
  * @param req
  */
 const getClientFbp = (req: NextApiRequest): string => {
-  const cookies = new Cookies(req.headers.cookie);
+  const cookies = new Cookies(req.headers.cookie ?? '');
 
   if (!cookies.get('_fbp')) {
     return '';
@@ -54,7 +54,7 @@ const getClientFbc = (req: NextApiRequest): string => {
     }
   }
 
-  const cookies = new Cookies(req.headers.cookie);
+  const cookies = new Cookies(req.headers.cookie ?? '');
 
   if (cookies.get('_fbc')) {
     return cookies.get('_fbc');
