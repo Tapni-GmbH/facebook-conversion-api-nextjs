@@ -1,4 +1,4 @@
-Facebook / Meta Conversion API for Next.js
+Facebook / Meta Conversion API (CAPI) for Next.js
 
 > Next.js wrapper for [Facebook's Conversion API](https://developers.facebook.com/docs/marketing-api/conversions-api/)
 
