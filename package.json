@@ -1,6 +1,6 @@
 {
   "name": "@tapstack/facebook-conversion-api-nextjs",
-  "version": "5.2.1",
+  "version": "5.2.2",
   "description": "Facebook Conversion API for Next.js",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
