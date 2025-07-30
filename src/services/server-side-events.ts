@@ -18,8 +18,8 @@ type Arguments = {
   }[]
   value?: number
   currency?: string
-  fbp: string
-  fbc: string
+  fbp?: string
+  fbc?: string
   ipAddress: string
   userAgent: string
   sourceUrl: string
@@ -107,8 +107,8 @@ const sendServerSideEvent = async ({
       ...(zipCode && {
         zp: (sha256Hash(zipCode)),
       }),
-      fbc,
-      fbp,
+      ...(fbc && { fbc }),
+      ...(fbp && { fbp }),
     },
     ...(products && products.length > 0) && {
       content_type: 'product',

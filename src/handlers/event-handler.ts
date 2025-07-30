@@ -18,6 +18,8 @@ type Arguments = {
   }[]
   value?: number
   currency?: string
+  fbp?: string
+  fbc?: string
   userAgent: string
   sourceUrl: string
   testEventCode?: string
@@ -58,6 +60,8 @@ const eventHandler = async (req: NextApiRequest, res: NextApiResponse) => {
     products,
     value,
     currency,
+    fbp,
+    fbc,
     userAgent,
     sourceUrl,
     testEventCode,
@@ -82,8 +86,8 @@ const eventHandler = async (req: NextApiRequest, res: NextApiResponse) => {
     products,
     value,
     currency,
-    fbp: getClientFbp(req),
-    fbc: getClientFbc(req),
+    fbp: fbp || getClientFbp(req),
+    fbc: fbc || getClientFbc(req),
     ipAddress: getClientIpAddress(req),
     userAgent,
     sourceUrl,
