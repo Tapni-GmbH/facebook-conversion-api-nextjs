@@ -1,6 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
 import debug from './utils/debug';
 import { FBEvent } from './types';
+import Cookies from 'universal-cookie';
 
 declare global {
   interface Window {
@@ -14,6 +15,9 @@ declare global {
  * @constructor
  */
 const fbPageView = (): void => {
+  if (typeof window === 'undefined') {
+    return;
+  }
   debug('Client Side Event: PageView');
 
   window.fbq('track', 'PageView');
@@ -26,7 +30,13 @@ const fbPageView = (): void => {
  * @constructor
  */
 const fbEvent = (event: FBEvent): void => {
+  if (typeof window === 'undefined') {
+    return;
+  }
   const eventId = event.eventId ? event.eventId : uuidv4();
+  const cookies = new Cookies();
+  const fbp = cookies.get('_fbp');
+  const fbc = cookies.get('_fbc');
 
   if (event.enableStandardPixel) {
     const clientSidePayload = {
@@ -43,7 +53,7 @@ const fbEvent = (event: FBEvent): void => {
       ...(event.currency && { currency: event.currency }),
     };
 
-    window.fbq('track', event.eventName, clientSidePayload, { eventID: eventId });
+    window.fbq('track', event.eventName, clientSidePayload, { eventID: eventId, ...(fbp && { fbp }), ...(fbc && { fbc }) });
 
     debug(`Client Side Event: ${event.eventName}`);
     debug(`Client Side Payload: ${JSON.stringify(clientSidePayload)}`);
@@ -64,6 +74,8 @@ const fbEvent = (event: FBEvent): void => {
       products: event.products,
       value: event.value,
       currency: event.currency,
+      fbp,
+      fbc,
       userAgent: navigator.userAgent,
       sourceUrl: window.location.href,
       testEventCode: event.testEventCode,
