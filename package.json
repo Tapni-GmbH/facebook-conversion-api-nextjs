@@ -28,13 +28,13 @@
   },
   "homepage": "https://github.com/tapni-gmbh/facebook-conversion-api-nextjs#readme",
   "dependencies": {
+    "@tapstack/facebook-conversion-api": "^1.0.0",
     "formdata-node": "^4.4.1",
     "universal-cookie": "^4.0.4",
-    "uuid": "^9.0.0",
-    "@tapstack/facebook-conversion-api": "^1.0.0"
+    "uuid": "^9.0.0"
   },
   "peerDependencies": {
-    "next": "15.4.2-canary.19",
+    "next": "^16.0.6",
     "react": "^18 || ^19",
     "react-dom": "^18 || ^19"
   },
@@ -52,7 +52,7 @@
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "next": "15.4.2-canary.19",
+    "next": "^16.0.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "typescript": "^5.0.4"
